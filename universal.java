@@ -19,31 +19,26 @@ public class universal {
 		WebDriver driver = new ChromeDriver(); 
 		driver.manage().window().maximize();
 		driver.get("https://qa.referloan.in");
-    	  final JDialog dialog = new JDialog();
+    	final JDialog dialog = new JDialog();
 	    dialog.setAlwaysOnTop(true);
 	    String prodname = JOptionPane.showInputDialog(dialog, "Please enter your Product name", "Enter product name", JOptionPane.INFORMATION_MESSAGE);
 	    
-
-		String pname = ""+prodname+"";
-		
-		String[] newline = pname.split(" ");
-		
-		//System.out.print(Arrays.toString(newline));
-		String updated = "";
+	
+		String[] newline = prodname.split(" ");
+    	
+    	String final_loan = "";
 		for (int i=0; i<=2; i++) {
 			//System.out.print(newline[i]);
-			 String update = newline[i];
-			updated = update.substring(0, 1).toUpperCase()+ update.substring(1).toLowerCase()+" ";
+			String update = newline[i];
+			String updated = update.substring(0).toUpperCase()+ update.substring(1).toLowerCase()+" ";
+			 final_loan = final_loan + updated;
 		}
-		
-		
-		
-		System.out.print(updated);
+		System.out.print(final_loan);
 	    
 		Thread.sleep(5000);
 		    
-		WebElement findprod = driver.findElement(By.xpath("//a[@tabindex='-1' and contains(text(),'"+updated+"')]"));
-		    
+		WebElement findprod = driver.findElement(By.xpath("//a[@tabindex='-1' and contains(text(),'"+prodname+"')]"));
+		
 		 String form_link = findprod.getAttribute("href");
 		 driver.get(form_link);
 		 Thread.sleep(2000);

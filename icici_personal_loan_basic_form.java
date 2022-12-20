@@ -17,24 +17,24 @@ public class icici_personal_loan_basic_form {
 		System.setProperty("webdriver.chrome.driver","C:\\selenium webdriver\\chrome driver\\chromedriver_win32_2\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		Actions builder = new Actions(driver);
-		driver.get("https://qa.referloan.in");
+	//	Actions builder = new Actions(driver);
+		driver.get("https://qa.referloan.in/loans/aditya-birla-home-loan");
 		
-		WebElement loan = driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/a"));
-		WebElement PL = driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/div/ul/li[1]/a"));
-		Actions act = new Actions(driver);
-		
-		builder.moveToElement(loan).perform();
-		builder.moveToElement(PL).perform();
-		
-		driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/div/ul/li[1]/div/ul/li[14]/a")).click();
-		Thread.sleep(2000);
+//		WebElement loan = driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/a"));
+//		WebElement PL = driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/div/ul/li[1]/a"));
+//		Actions act = new Actions(driver);
+//		
+//		builder.moveToElement(loan).perform();
+//		builder.moveToElement(PL).perform();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/div/ul/li[1]/div/ul/li[14]/a")).click();
+//		Thread.sleep(2000);
 		
 //		basic details
 		
 		driver.findElement(By.name("full_name")).sendKeys("Test qa");
 		Thread.sleep(1000);
-		driver.findElement(By.name("phone_no")).sendKeys("9717106422");
+		driver.findElement(By.name("phone_no")).sendKeys("9667484050");
 		Thread.sleep(1000);
 		driver.findElement(By.id("otpCheckbox")).click();
 		Thread.sleep(1000);
@@ -54,17 +54,17 @@ public class icici_personal_loan_basic_form {
 		driver.findElement(By.id("demo-simple-select-standard")).click();
 		driver.findElement(By.xpath("//*[@id=\"menu-title\"]/div[3]/ul/li[1]")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.id("full_name")).sendKeys("Test Qa");
+		driver.findElement(By.id("full_name")).sendKeys("test QA");
 		Thread.sleep(500);
 		driver.findElement(By.id("phone_number")).sendKeys("9717156422");
 		Thread.sleep(500);
-		driver.findElement(By.id("email")).sendKeys("Test123@gmail.com");
+		driver.findElement(By.id("email")).sendKeys("test453@gmail.com");
 		Thread.sleep(500);
 //		gender
 		driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form[2]/div[1]/div[5]/div/div/div")).click();
 		driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[1]")).click();
 		
-		driver.findElement(By.id("pan")).sendKeys("TESTR3456R");
+		driver.findElement(By.id("pan")).sendKeys("TESTR3453R");
 		
 //		 Marital status
 		driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form[2]/div[1]/div[6]/div/div/div")).click();
