@@ -2,6 +2,9 @@ package referloan;
 
 import java.time.Duration;
 
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +24,7 @@ public class early_salary {
 				WebDriver driver = new ChromeDriver();
 				Actions builder = new Actions(driver); 
 				driver.manage().window().maximize();
-				driver.get("https://qa.referloan.in");
+				driver.get("https://referloan.in");
 				Thread.sleep(3000);
 				
 				WebElement loan = driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/a"));
@@ -30,15 +33,15 @@ public class early_salary {
 				
 				builder.moveToElement(loan).perform();
 				builder.moveToElement(PL).perform();
-				driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/div/ul/li[1]/div/ul/li[6]/a")).click();
+				driver.findElement(By.xpath("/html/body/div/header[2]/nav/div/ul/li[2]/div/ul/li[1]/div/ul/li[7]/a")).click();
 				
 				Thread.sleep(1000);
 				
 //				basic details
 				
-				driver.findElement(By.name("full_name")).sendKeys("Test qa");
+				driver.findElement(By.name("full_name")).sendKeys("Ravi kumar");
 				Thread.sleep(1000);
-				driver.findElement(By.name("phone_no")).sendKeys("9717106422");
+				driver.findElement(By.name("phone_no")).sendKeys("9717156423");
 				Thread.sleep(1000);
 				driver.findElement(By.id("otpCheckbox")).click();
 				Thread.sleep(1000);
@@ -48,7 +51,10 @@ public class early_salary {
 				Thread.sleep(2000);
 				
 //				otp click
-				
+				final JDialog dialog = new JDialog();
+			    dialog.setAlwaysOnTop(true);
+			    String otp = JOptionPane.showInputDialog(dialog, "Please enter your otp", "Enter product name", JOptionPane.INFORMATION_MESSAGE);
+			    driver.findElement(By.name("otp")).sendKeys(""+otp+"");
 				driver.findElement(By.xpath("//button[@class= 'mt-4' and contains(.,'verify OTP')]")).click();
 				Thread.sleep(1000);
 				
@@ -62,15 +68,15 @@ public class early_salary {
 				driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form/div/div[1]/div[5]/div[3]/div/div")).click();
 				driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[1]")).click();
 				driver.findElement(By.id("emailid")).sendKeys("test345@gmail.com");
-				driver.findElement(By.id("pincode")).sendKeys("342213");
-				driver.findElement(By.name("pan")).sendKeys("TESTQ2353Q");
+				driver.findElement(By.id("pincode")).sendKeys("201301");
+				driver.findElement(By.name("pan")).sendKeys("AWJPS1465G");
 				driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form/div/div[2]/button")).click();
 				
 				Thread.sleep(1000);
 				// second step 
 				
 				driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form/div/div[1]/div[1]/div[3]/div/div")).click();
-				driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[2]")).click();
+				driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[1]")).click();
 				
 				driver.findElement(By.id("address1")).sendKeys("Area ABC");
 				driver.findElement(By.id("address2")).sendKeys("NOIDA");
@@ -79,10 +85,10 @@ public class early_salary {
 				driver.findElement(By.id("state")).sendKeys("Uttar Pradesh");
 				
 				driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form/div/div[1]/div[7]/div[3]/div/div")).click();
-				driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[2]")).click();
+				driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[1]")).click();
 				
 				driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form/div/div[1]/div[8]/div[3]/div/div")).click();
-				driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[1]")).click();
+				driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul/li[2]")).click();
 				
 				driver.findElement(By.id("fathername")).sendKeys("TEST QA");
 				driver.findElement(By.id("mothername")).sendKeys("TEST QA");
@@ -91,7 +97,7 @@ public class early_salary {
 				driver.findElement(By.id("employername")).sendKeys("ABC ptv ltd");
 				driver.findElement(By.id("officeaddress")).sendKeys("ABC area noida");
 				driver.findElement(By.id("officeCity")).sendKeys("Noida");
-				driver.findElement(By.id("officepincode")).sendKeys("201310");
+				driver.findElement(By.id("officepincode")).sendKeys("201301");
 				driver.findElement(By.id("salary")).sendKeys("45000");
 				
 				WebElement doj = driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form/div/div[1]/div[18]/div[3]/div/input"));
@@ -107,7 +113,7 @@ public class early_salary {
 				Thread.sleep(2000);
 				
 				driver.findElement(By.xpath("/html/body/div/div/section[1]/div[2]/div/form/div/div[2]/button")).click();
-				Thread.sleep(5000);
+				Thread.sleep(7000);
 				
 				driver.quit();
 
