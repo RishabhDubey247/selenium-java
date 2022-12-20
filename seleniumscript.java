@@ -102,8 +102,6 @@ public class seleniumscript {
 				driver.findElement(By.className("mt-4")).click();
 				Thread.sleep(1000);
 				driver.quit();
-				
-
 	}
 
 }
